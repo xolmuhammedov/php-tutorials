@@ -1,10 +1,17 @@
 <?php
-function addto($x) {
-  return function($y) use ($x) {
-    return $x + $y;
+function getStatus($paymentStatus , $showMessage = true) : string {
+  $message = match($paymentStatus) {
+    1 => 'Success',
+    2 => 'Denied',
+    default => 'Unknown'
   };
-}
 
-$fourplus = addto(4);
-echo $fourplus(3);
+  if($showMessage){
+    var_dump($message);
+  }
+
+  return $message;
+}
+$statusMessage = getStatus(1);
+var_dump($statusMessage);
 ?>
