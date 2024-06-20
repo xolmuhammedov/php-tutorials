@@ -1,4 +1,5 @@
 <?php
-echo "it is working";
+echo "it is working</br>";
+echo "righttt?";
 
 ?>
